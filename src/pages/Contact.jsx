@@ -17,21 +17,21 @@ export default function Contact() {
   const offices = [
     {
       name: "Jabalpur",
-      address: "71, Dadda Nagar, Jabalpur, Madhya Pradesh, 482002",
+      address: "71, Dadda Nagar, Karmeta Jabalpur, Madhya Pradesh, 482002",
       email: "support@adrstechno.com",
       phone: "+91-9201347033, +91-9516467095",
       mapLink: "https://www.google.com/maps/place/Dada+Nagar,+Jabalpur,+Madhya+Pradesh+482002",
     },
     {
       name: "Bhopal",
-      address: "123, Zone 1, Bhopal, Madhya Pradesh, 462001",
+      address: "Plot No. R25, Opposite Railway Track, Zone 02, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011",
       email: "support@adrstechno.com",
       phone: "+91-9201347033",
       mapLink: "https://www.google.com/maps/place/Bhopal,+Madhya+Pradesh",
     },
     {
       name: "Raipur",
-      address: "456, MG Road, Raipur, Chhattisgarh, 492001",
+      address: "Shangar Nagar VIP road Raipur Chhattisgarh, 492001",
       email: "support@adrstechno.com",
       phone: "+91-9201347033",
       mapLink: "https://www.google.com/maps/place/Raipur,+Chhattisgarh",
@@ -58,38 +58,48 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Left Section: Offices Info */}
           <motion.div {...fadeUp(0.3)} className="space-y-10">
-            {offices.map((office) => (
-              <div key={office.name} className="space-y-4 p-4 rounded-xl shadow-sm bg-white border border-gray-200 hover:shadow-lg transition-shadow">
-                <h4 className="font-semibold text-xl md:text-2xl" style={{ color: secondary }}>
-                  {office.name} Office
-                </h4>
-                <div className="flex items-start gap-3">
-                  <FaMapMarkerAlt className="text-primary mt-1" style={{ color: primary }} />
-                  <a
-                    href={office.mapLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-700 flex items-center gap-1"
-                  >
-                    {office.address} <FaExternalLinkAlt className="text-sm" />
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaEnvelope className="text-primary" style={{ color: primary }} />
-                  <a href={`mailto:${office.email}`} className="text-gray-600 hover:text-blue-700">
-                    {office.email}
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <FaPhone className="text-primary" style={{ color: primary }} />
-                  <a href={`tel:${office.phone}`} className="text-gray-600 hover:text-blue-700">
-                    {office.phone}
-                  </a>
-                </div>
-              </div>
-            ))}
-          </motion.div>
+           {
+  offices.map((office) => {
+    // Generate map link from address
+    const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(office.address)}`;
 
+    return (
+      <div
+        key={office.name}
+        className="space-y-4 p-4 rounded-xl shadow-sm bg-white border border-gray-200 hover:shadow-lg transition-shadow"
+      >
+        <h4 className="font-semibold text-xl md:text-2xl" style={{ color: secondary }}>
+          {office.name} Office
+        </h4>
+        <div className="flex items-start gap-3">
+          <FaMapMarkerAlt className="text-primary mt-1" style={{ color: primary }} />
+          <a
+            href={mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-blue-700 flex items-center gap-1"
+          >
+            {office.address} <FaExternalLinkAlt className="text-sm" />
+          </a>
+        </div>
+        <div className="flex items-center gap-3">
+          <FaEnvelope className="text-primary" style={{ color: primary }} />
+          <a href={`mailto:${office.email}`} className="text-gray-600 hover:text-blue-700">
+            {office.email}
+          </a>
+        </div>
+        <div className="flex items-center gap-3">
+          <FaPhone className="text-primary" style={{ color: primary }} />
+          <a href={`tel:${office.phone}`} className="text-gray-600 hover:text-blue-700">
+            {office.phone}
+          </a>
+        </div>
+      </div>
+    );
+  })
+}
+
+          </motion.div>
           {/* Right Section: Contact Form */}
           <motion.div >
             <ContactForm />
