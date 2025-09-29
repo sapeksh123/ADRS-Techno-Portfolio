@@ -38,7 +38,7 @@ export default function Footer() {
             <FaEnvelope className="text-brand-400" /> support@adrstechno.com
           </p>
           <p className="mt-1 text-sm flex items-center justify-center md:justify-start gap-2 text-gray-300 hover:text-brand-400 transition">
-            <FaPhone className="text-brand-400" /> +91-9201347033, +91-9516467095
+            <FaPhone className="text-brand-400" /> +91-9201347033,+91-9516467095
 
           </p>
         </motion.div>
