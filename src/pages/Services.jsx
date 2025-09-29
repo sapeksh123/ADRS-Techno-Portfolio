@@ -10,7 +10,7 @@ import {
   FaTools, 
   FaLifeRing,
   FaPalette,
-  FaCogs ,
+  FaCogs,
   FaCloud,
   FaChalkboardTeacher 
 } from "react-icons/fa";
@@ -26,6 +26,7 @@ const servicesList = [
       "Integration with third-party APIs & services",
       "Cloud deployment and continuous monitoring",
     ],
+    techstack: ["React", "Next.js", "Node.js", "Express", "NestJs" ,"MongoDB", "PostgreSQL", "SQL",  "AWS"],
   },
   {
     icon: <FaMobileAlt size={28} color="#1A2A80" />,
@@ -37,18 +38,20 @@ const servicesList = [
       "Integration with cloud & enterprise systems",
       "Ongoing updates, maintenance & support",
     ],
+    techstack: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase"],
   },
   {
-  icon: <FaCogs size={28} color="#1A2A80" />,
-  title: "ERP Solutions",
-  points: [
-    "Custom ERP systems tailored to business workflows",
-    "Modules for  finance, HR, CRM and operations",
-    "Integration with web, mobile, and IoT systems",
-    "Cloud deployment with role-based access control",
-    "Ongoing maintenance, analytics, and reporting",
-  ],
-},
+    icon: <FaCogs size={28} color="#1A2A80" />,
+    title: "ERP Solutions",
+    points: [
+      "Custom ERP systems tailored to business workflows",
+      "Modules for finance, HR, CRM and operations",
+      "Integration with web, mobile, and IoT systems",
+      "Cloud deployment with role-based access control",
+      "Ongoing maintenance, analytics, and reporting",
+    ],
+    techstack: ["Odoo", "SAP", "Django", "Spring Boot", "PostgreSQL", "Azure"],
+  },
   {
     icon: <FaRobot size={28} color="#1A2A80" />,
     title: "AI & ML Solutions",
@@ -59,6 +62,7 @@ const servicesList = [
       "Computer vision and image recognition",
       "ML model deployment and tuning",
     ],
+    techstack: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "OpenCV"],
   },
   {
     icon: <FaCube size={28} color="#1A2A80" />,
@@ -70,6 +74,7 @@ const servicesList = [
       "Integration with mobile & web platforms",
       "Ongoing optimization and performance monitoring",
     ],
+    techstack: ["Unity 3D", "Unreal Engine", "Three.js", "WebXR", "Blender"],
   },
   {
     icon: <FaCheckCircle size={28} color="#1A2A80" />,
@@ -81,6 +86,7 @@ const servicesList = [
       "Custom device integrations and APIs",
       "Security, maintenance & scalability",
     ],
+    techstack: ["Arduino", "Raspberry Pi", "MQTT", "AWS IoT", "Azure IoT Hub"],
   },
   {
     icon: <FaGamepad size={28} color="#1A2A80" />,
@@ -92,6 +98,7 @@ const servicesList = [
       "Multiplayer and social integrations",
       "Post-launch support and updates",
     ],
+    techstack: ["Unity", "Unreal Engine", "C#", "C++", "Photon Engine"],
   },
   {
     icon: <FaPalette size={28} color="#1A2A80" />,
@@ -103,6 +110,7 @@ const servicesList = [
       "3D bead product and jewelry visualization",
       "User-focused experience design",
     ],
+    techstack: ["Figma", "Adobe XD", "Sketch", "Illustrator", "Photoshop"],
   },
   {
     icon: <FaCloud size={28} color="#1A2A80" />,
@@ -114,18 +122,20 @@ const servicesList = [
       "Monitoring, backups, and disaster recovery",
       "Security, optimization, and maintenance",
     ],
+    techstack: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "Jenkins"],
   },
   {
-  icon: <FaChalkboardTeacher size={28} color="#1A2A80" />,
-  title: "Internships & Workshops",
-  points: [
-    "Industry-level internships for hands-on experience",
-    "Workshops on MERN, Mobile, AI/ML, AR/VR, IoT",
-    "Opportunities for PPO (Pre-Placement Offer) for top performers",
-    "Guidance and mentoring from senior engineers",
-    "Exposure to real projects and client requirements",
-  ],
-},
+    icon: <FaChalkboardTeacher size={28} color="#1A2A80" />,
+    title: "Internships & Workshops",
+    points: [
+      "Industry-level internships for hands-on experience",
+      "Workshops on MERN, Mobile, AI/ML, AR/VR, IoT",
+      "Opportunities for PPO (Pre-Placement Offer) for top performers",
+      "Guidance and mentoring from senior engineers",
+      "Exposure to real projects and client requirements",
+    ],
+    techstack: ["MERN", " React Native" ,"Flutter", "AI/ML", "AR/VR", "IoT"],
+  },
   {
     icon: <FaTools size={28} color="#1A2A80" />,
     title: "Project Maintenance",
@@ -136,6 +146,7 @@ const servicesList = [
       "User feedback integration",
       "24/7 support for enterprise clients",
     ],
+    techstack: ["GitHub", "Jira", "Docker", "Kubernetes", "Monitoring Tools"],
   },
   {
     icon: <FaLifeRing size={28} color="#1A2A80" />,
@@ -147,6 +158,7 @@ const servicesList = [
       "Training and knowledge transfer",
       "Dedicated support team for enterprise clients",
     ],
+    techstack: ["AWS", "Azure", "Google Cloud", "Enterprise Tools"],
   },
 ];
 
@@ -181,11 +193,30 @@ export default function Services() {
               {s.icon}
             </div>
             <h4 className="text-xl font-semibold text-[#3B38A0]">{s.title}</h4>
+            
+            {/* Service Points */}
             <ul className="text-gray-600 text-sm md:text-base list-disc list-inside space-y-1">
               {s.points.map((point, i) => (
                 <li key={i}>{point}</li>
               ))}
             </ul>
+
+            {/* Tech Stack */}
+            {s.techstack && (
+              <div className="mt-3">
+                <h5 className="text-sm font-semibold text-[#1A2A80] mb-4">Tech Stack:</h5>
+                <div className="flex flex-wrap gap-2">
+                  {s.techstack.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 bg-[#1A2A80]/10 text-[#1A2A80] text-xs font-medium rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </motion.div>
         ))}
       </div>
