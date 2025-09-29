@@ -120,7 +120,7 @@ Continuous updates and technical support.`,
   {
     id: "vednine-jeweller",
     icon: "FaGem",
-    title: "Vednibne Jeweller",
+    title: "Vednine Jeweller",
     shortDesc: "Jewellery management system with advanced analytics.",
     fullDesc: `Comprehensive jewellery shop management platform.
 Inventory tracking and reporting.
@@ -188,7 +188,7 @@ Continuous maintenance and feature updates.`,
   {
     id: "video-crew",
     icon: "FaVideo",
-    title: "Video Crew 2 (Korea)",
+    title: "Video Crew (Korea)",
     shortDesc: "Media production management platform.",
     fullDesc: `Platform for managing video projects and production teams.
 Project scheduling and deadlines.
@@ -202,23 +202,24 @@ Integration with editing tools.
 Ongoing updates and support.`,
     // image: videoCrewImg
   },
-  {
-    id: "posco-international",
-    icon: "FaIndustry",
-    title: "Posco International",
-    shortDesc: "Industrial enterprise solution for supply chain management.",
-    fullDesc: `Supply chain and enterprise management system.
-Inventory tracking and forecasting.
-Supplier and vendor management.
-Order processing and logistics.
-Analytics dashboards for management.
-Cloud deployment for global teams.
-Secure user roles and permissions.
-Mobile access for field teams.
-Custom reporting and alerts.
-Continuous platform maintenance.`,
-    // image: poscoImg
-  },
+{
+  id: "survey-pro",
+  icon: "FaPoll",
+  title: " Survey Pro (Posco International) (Korea)",
+  shortDesc: "Advanced platform for surveys, feedback, and data collection.",
+  fullDesc: `Customisable survey creation with drag-and-drop builder.
+Multi-channel distribution (email, SMS, social).
+Real-time response tracking and analytics.
+Supports anonymous and authenticated surveys.
+Conditional logic and branching questions.
+Exportable reports in PDF/Excel formats.
+Secure data storage with GDPR compliance.
+Team collaboration and role-based permissions.
+Mobile-friendly design for higher participation.
+Integration with CRM and third-party tools.`,
+  // image: surveyImg
+},
+
   {
     id: "kia",
     icon: "FaCar",
