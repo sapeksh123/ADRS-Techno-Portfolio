@@ -25,8 +25,8 @@ import logo5 from "/videocrew.png";
 import logo6 from "/rays.png";
 import logo7 from "/devcode.jpg";
 import logo8 from "/Event.png";
-import logo9 from "/Event.png";
-import logo10 from "/Event.png";
+// import logo9 from "/Event.png";
+// import logo10 from "/Event.png";
 
 export default function Home() {
   const partners = [
@@ -38,8 +38,8 @@ export default function Home() {
     logo6,
     logo7,
     logo8,
-    logo9,
-    logo10,
+    // logo9,
+    // logo10,
   ];
   return (
     <div>
