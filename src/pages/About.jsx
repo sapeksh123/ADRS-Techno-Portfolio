@@ -36,7 +36,7 @@ export default function About() {
   const offices = [
     {
       name: "Jabalpur",
-      address: "71, Dadda Nagar, Karmeta Jabalpur, MP",
+      address: "71, Dadda Nagar, Karmeta Jabalpur, Madhya Pradesh ",
       founded: "2024",
     },
     { name: "Bhopal", address: "Plot No. R25, Opposite Railway Track, Zone 02, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011", founded: "2024" },
