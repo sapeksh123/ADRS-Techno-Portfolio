@@ -177,7 +177,7 @@ export default function Services() {
           Our Services
         </h2>
         <p className="text-gray-600 text-base md:text-lg">
-          Comprehensive digital solutions for enterprise clients. From web and mobile apps to AR/VR, AI/ML, IoT, 3D visualization, cloud deployment, and full lifecycle project maintenance.
+          Comprehensive digital solutions for enterprise clients. From web and mobile apps to AR/VR, AI/ML, IoT, 3D visualization, cloud deployment, and full lifecycle project maintenance and services.
         </p>
       </motion.div>
 
