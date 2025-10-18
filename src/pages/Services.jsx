@@ -26,7 +26,7 @@ const servicesList = [
       "Integration with third-party APIs & services",
       "Cloud deployment and continuous monitoring",
     ],
-    techstack: ["React", "Next.js", "Node.js", "Express", "NestJs" ,"MongoDB", "PostgreSQL", "SQL",  "AWS"],
+    techstack: ["React", "Next.js", "Node.js", "Express", "NestJs" ,"MongoDB", "PostgreSQL", "SQL",  "AWS", "SEO"],
   },
   {
     icon: <FaMobileAlt size={28} color="#1A2A80" />,
