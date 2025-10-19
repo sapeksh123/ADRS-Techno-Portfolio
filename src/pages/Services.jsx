@@ -158,7 +158,7 @@ const servicesList = [
       "Training and knowledge transfer",
       "Dedicated support team for enterprise clients",
     ],
-    techstack: ["AWS", "Azure", "Google Cloud", "Enterprise Tools"],
+    techstack: ["AWS", "Azure", "Google Cloud", "Enterprise Tools like ERP, CRM"],
   },
 ];
 
