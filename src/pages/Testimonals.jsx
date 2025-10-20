@@ -27,10 +27,10 @@ const testimonialsData = [
     clientType: "India",
   },
   {
-    name: "John Anderson",
+    name: "Rajesh Tiwari",
     project: "Sea World Water Solutions",
     review: "The water management system developed by ADRS Techno exceeded our expectations. Highly recommended!",
-    clientType: "USA",
+    clientType: "India",
   },
   {
     name: "Vednibne Jeweller",
