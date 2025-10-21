@@ -65,7 +65,7 @@ const testimonialsData = [
   },
   {
     name: "Lee Min Ho",
-    project: "Video Crew2",
+    project: "Video Crew",
     review: "Professional team delivering top-notch video production solutions.",
     clientType: "Korea",
   },
@@ -77,7 +77,7 @@ const testimonialsData = [
   },
   {
     name: "KIA Motors",
-    project: "Automotive Solutions",
+    project: "KIA GCOF 2025",
     review: "Seamless digital solutions for our automotive projects. Excellent communication and support.",
     clientType: "Korea",
   },
