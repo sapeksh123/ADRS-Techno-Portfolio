@@ -77,10 +77,10 @@ export default function Hero() {
               View Services
             </Link>
             <Link
-              to="/Projects"
+              to="/Products"
               className="focus-ring btn-secondary w-full px-6 py-3 text-sm sm:w-auto"
             >
-              View Projects
+              View Products
             </Link>
           </div>
 

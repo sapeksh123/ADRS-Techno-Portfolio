@@ -41,66 +41,66 @@ export default function About() {
   const servicesList = [
     {
       icon: <FaLaptopCode size={28} color="#1A2A80" />,
-      title: "Web Applications",
-      desc: "Enterprise web apps with modern UI & scalable backend.",
+      title: "Web, Shopify & WordPress",
+      desc: "Business websites and web apps with modern UX.",
     },
     {
       icon: <FaMobileAlt size={28} color="#1A2A80" />,
       title: "Mobile Applications",
-      desc: "iOS & Android apps with intuitive UX and high performance.",
+      desc: "Fast Android and iOS apps with clean experience.",
     },
     {
       icon: <FaRobot size={28} color="#1A2A80" />,
       title: "AI & ML Solutions",
-      desc: "Smart AI/ML solutions to automate and optimize business processes.",
+      desc: "Automation and insights with practical AI solutions.",
     },
     {
       icon: <FaCube size={28} color="#1A2A80" />,
-      title: "AR/VR Development",
-      desc: "Immersive AR/VR experiences for enterprise & entertainment.",
+      title: "ERP, CRM & LMS",
+      desc: "Core business systems for operations and growth.",
     },
     {
       icon: <FaCheckCircle size={28} color="#1A2A80" />,
-      title: "IoT Solutions",
-      desc: "Connected devices and IoT automation for smarter workflows.",
+      title: "Digital Marketing",
+      desc: "SEO, SEM, and social campaigns to scale visibility.",
     },
     {
       icon: <FaGamepad size={28} color="#1A2A80" />,
-      title: "Game Development",
-      desc: "Engaging 2D/3D games for web, mobile, and VR platforms.",
+      title: "Training & Internship",
+      desc: "Hands-on training programs with industry mentorship.",
     },
   ];
 
-  const ProjectsList = [
+  const productsList = [
     {
-      title: "GEM Control",
-      desc: "Jewellery shop management system for tracking inventory and sales.",
+      title: "GoEventify",
+      desc: "Smart event management and ticketing platform.",
+      icon: <FaGlobe size={28} color="#1A2A80" />,
+    },
+    {
+      title: "GemControl",
+      desc: "Jewellery billing, inventory, and analytics system.",
       icon: <FaGem size={28} color="#1A2A80" />,
     },
     {
-      title: "AI Based Learning Management System",
-      desc: "Platform for managing online courses, tracking progress, and assessments.",
+      title: "TestWithSpark (TWS Online Testing)",
+      desc: "Secure online assessments with controlled test flow.",
       icon: <FaLaptopCode size={28} color="#1A2A80" />,
     },
     {
-      title: "CRM Solutions",
-      desc: "Customer relationship management system for better client handling.",
-      icon: <FaUsers size={28} color="#1A2A80" />,
-    },
-    {
-      title: "IDHPs",
-      desc: "Industrial Data Handling Platforms for enterprise-level data management.",
+      title: "LMS",
+      desc: "Learning management platform for training and education.",
       icon: <FaDatabase size={28} color="#1A2A80" />,
     },
     {
-      title: "Tiffin Management",
-      desc: "Food delivery and tiffin management system for users and providers.",
-      icon: <FaUtensils size={28} color="#1A2A80" />,
+      title: "CRM",
+      desc: "Relationship management for leads and customers.",
+      icon: <FaUsers size={28} color="#1A2A80" />,
     },
     {
-      title: "Other Web & Mobile Projects",
-      desc: "Various custom Projects for international and Indian clients.",
-      icon: <FaGlobe size={28} color="#1A2A80" />,
+      title: "Inventory Management System",
+      desc: "Manage stock and supply flow with real-time visibility.",
+      icon: <FaUtensils size={28} color="#1A2A80" />,
     },
   ];
 
@@ -118,7 +118,8 @@ export default function About() {
             <p className="section-subtitle text-base md:text-lg mb-6">
               Founded in 2024, ADRS Techno Pvt Ltd delivers innovative
               technology solutions across India, US, Canada, and Korea. We
-              specialise in web, mobile, ERP, AI, AR/VR, and IoT Projects for
+              specialise in web, mobile, ERP, AI, marketing, and business
+              products for
               global clients.
             </p>
           </motion.div>
@@ -168,6 +169,9 @@ export default function About() {
           <h3 className="section-title text-3xl mb-10">
             Our Services
           </h3>
+          <p className="section-subtitle mx-auto mb-8 max-w-3xl text-center text-sm md:text-base">
+            Short overview of our core services across development, business platforms, marketing, and training.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {servicesList.map((s, idx) => (
               <motion.div
@@ -200,10 +204,10 @@ export default function About() {
       <section className="page-shell pt-2">
         <div>
           <h3 className="section-title text-3xl mb-10">
-            Our Projects
+            Our Products
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {ProjectsList.map((p, idx) => (
+            {productsList.map((p, idx) => (
               <motion.div
                 {...fadeUp(0.1 + idx * 0.1)}
                 key={idx}
@@ -222,10 +226,10 @@ export default function About() {
 
           <div className="text-center mt-8">
             <Link
-              to="/Projects"
+              to="/products"
               className="focus-ring btn-primary px-8 py-3 text-lg"
             >
-              View All Projects
+              View All Products
             </Link>
           </div>
         </div>
@@ -256,29 +260,35 @@ export default function About() {
           <h3 className="section-title text-3xl mb-2">
             Meet the Team
           </h3>
-          <p className="section-subtitle">Leadership and Development</p>
+          <p className="section-subtitle">Leadership Driving Product, Engineering, and Growth</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          <motion.div
-            {...fadeUp(0.1)}
-            className="surface-card flex cursor-pointer flex-col items-center gap-4 rounded-2xl p-6 text-center"
-          >
+        <motion.div
+          {...fadeUp(0.08)}
+          className="surface-card mx-auto mb-8 max-w-4xl rounded-2xl border border-[#dfe6ff] bg-gradient-to-r from-[#f7f9ff] to-white p-7 shadow-[0_16px_34px_rgba(13,38,95,0.09)]"
+        >
+          <div className="flex flex-col items-center gap-4 text-center md:flex-row md:items-center md:text-left">
             <img
               src="/profile.webp"
               alt="Abhishek Dubey"
-              className="h-24 w-24 rounded-full border-4 border-[#dfe6ff] object-cover"
+              className="h-28 w-28 rounded-full border-4 border-[#dfe6ff] object-cover"
             />
-            <h4 className="font-[Sora] text-xl font-semibold text-[#132f8b]">
-              Abhishek Dubey
-            </h4>
-            <p className="text-sm font-medium text-slate-700">Founder & CEO</p>
-            <p className="text-sm text-slate-500">Strategy and Product</p>
-          </motion.div>
+            <div>
+              <span className="mb-2 inline-block rounded-full bg-[#132f8b]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#132f8b]">
+                Chief Executive Officer
+              </span>
+              <h4 className="font-[Sora] text-2xl font-semibold text-[#132f8b]">Abhishek Dubey</h4>
+              <p className="mt-2 text-sm text-slate-600 md:text-base">
+                Founder & CEO leading company vision, strategy, and product direction across global engagements.
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           <motion.div
-            {...fadeUp(0.2)}
-            className="surface-card flex cursor-pointer flex-col items-center gap-4 rounded-2xl p-6 text-center"
+            {...fadeUp(0.12)}
+            className="surface-card flex flex-col items-center gap-4 rounded-2xl p-6 text-center transition hover:-translate-y-1"
           >
             <img
               src="/profile.webp"
@@ -288,29 +298,29 @@ export default function About() {
             <h4 className="font-[Sora] text-xl font-semibold text-[#132f8b]">
               Siddhant Dubey
             </h4>
-            <p className="text-sm font-medium text-slate-700">CTO</p>
-            <p className="text-sm text-slate-500">Software Engineer and DevOps Specialist</p>
+            <p className="rounded-full bg-[#132f8b]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#132f8b]">Chief Technology Officer (CTO)</p>
+            <p className="text-sm text-slate-500">Technology architecture, engineering excellence, and DevOps reliability.</p>
           </motion.div>
 
           <motion.div
-            {...fadeUp(0.3)}
-            className="surface-card flex cursor-pointer flex-col items-center gap-4 rounded-2xl p-6 text-center"
+            {...fadeUp(0.18)}
+            className="surface-card flex flex-col items-center gap-4 rounded-2xl p-6 text-center transition hover:-translate-y-1"
           >
             <img
               src="/profile.webp"
-              alt="Piyush Khare"
+              alt="Prateek Gupta"
               className="h-24 w-24 rounded-full border-4 border-[#dfe6ff] object-cover"
             />
             <h4 className="font-[Sora] text-xl font-semibold text-[#132f8b]">
-              Piyush Khare
+            Prateek Gupta
             </h4>
-            <p className="text-sm font-medium text-slate-700">CFO and COO</p>
-            <p className="text-sm text-slate-500">Financial Strategist and Operations Leader</p>
+            <p className="rounded-full bg-[#132f8b]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#132f8b]">Co-Founder</p>
+            <p className="text-sm text-slate-500">Business operations, partnerships, and strategic execution for sustainable growth.</p>
           </motion.div>
 
           <motion.div
-            {...fadeUp(0.4)}
-            className="surface-card flex cursor-pointer flex-col items-center gap-4 rounded-2xl p-6 text-center"
+            {...fadeUp(0.24)}
+            className="surface-card flex flex-col items-center gap-4 rounded-2xl p-6 text-center transition hover:-translate-y-1"
           >
             <img
               src="/profile.webp"
@@ -320,8 +330,18 @@ export default function About() {
             <h4 className="font-[Sora] text-xl font-semibold text-[#132f8b]">
               Dev Team
             </h4>
-            <p className="text-sm font-medium text-slate-700">20+ Developers</p>
-            <p className="text-sm text-slate-500">Full-stack, mobile, DevOps, cloud, AI/ML, and design</p>
+            <p className="rounded-full bg-[#132f8b]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#132f8b]">Engineering Team</p>
+            <p className="text-sm text-slate-500">40+ experienced developers across all domains including full-stack, mobile, cloud, AI/ML, and design.</p>
+          </motion.div>
+
+          <motion.div
+            {...fadeUp(0.3)}
+            className="surface-card md:col-span-3 flex flex-col items-center gap-3 rounded-2xl p-5 text-center"
+          >
+            <p className="font-[Sora] text-lg font-semibold text-[#132f8b]">Leadership Structure</p>
+            <p className="max-w-3xl text-sm text-slate-600 md:text-base">
+              Leadership order is organized as CEO at the top, followed by Chief Technology Officer (CTO) and Co-Founder to maintain clear communication and execution flow.
+            </p>
           </motion.div>
         </div>
       </section>
