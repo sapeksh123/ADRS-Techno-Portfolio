@@ -28,13 +28,11 @@ export default function About() {
     {
       name: "Jabalpur",
       address: "71, Dadda Nagar, Karmeta Jabalpur, Madhya Pradesh ",
-      founded: "2024",
     },
-    { name: "Bhopal", address: "Plot No. R25, Opposite Railway Track, Zone 02, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011", founded: "2024" },
+    { name: "Bhopal", address: "Plot No. R25, Opposite Railway Track, Zone 02, Maharana Pratap Nagar, Bhopal, Madhya Pradesh 462011",  },
     {
       name: "Raipur",
       address: "Shangar Nagar VIP road Raipur Chhattisgarh, 492001",
-      founded: "2024",
     },
   ];
 

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import logo from "/logob.jpg";
+import logo from "/blacklogo.png";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
