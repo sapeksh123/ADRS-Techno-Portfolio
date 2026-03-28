@@ -1,140 +1,124 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import heroImg from "/hero.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaUserTie, FaProjectDiagram, FaGlobeAmericas } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { fadeUp, scaleIn } from "../utils/motion";
 
-export default function Hero() {
- const stats = [
-  { icon: <FaUserTie size={28} />, number: "20+", label: "Specialist Developers" },
-  { icon: <FaProjectDiagram size={28} />, number: "50+", label: "Projects Delivered" },
-  { icon: <FaGlobeAmericas size={28} />, number: "Global", label: "Clients Worldwide" },
+const rotatingQuotes = [
+  "Innovating solutions for a smarter tomorrow.",
+  "Empowering businesses globally with technology.",
+  "Where ideas meet cutting-edge software.",
 ];
 
-
-  const quotes = [
-    "Innovating solutions for a smarter tomorrow.",
-    "Empowering businesses globally with technology.",
-    "Where ideas meet cutting-edge software.",
+export default function Hero() {
+  const stats = [
+    { icon: <FaUserTie size={22} />, number: "40+", label: "Specialist Developers" },
+    { icon: <FaProjectDiagram size={22} />, number: "100+", label: "Projects Delivered" },
+    { icon: <FaGlobeAmericas size={22} />, number: "Global", label: "Clients Worldwide" },
   ];
 
   const [currentQuote, setCurrentQuote] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentQuote((prev) => (prev + 1) % quotes.length);
+      setCurrentQuote((prev) => (prev + 1) % rotatingQuotes.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative bg-white overflow-hidden mt-10">
-      {/* Background Shapes */}
+    <section className="relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-10 left-12 w-28 h-28 bg-gradient-to-r from-[#1A2A80] to-[#3B38A0] rounded-full opacity-20 blur-3xl animate-bounce-slow" />
-        <div className="absolute bottom-16 right-20 w-36 h-36 bg-gradient-to-r from-[#7A85C1] to-[#B2B0E8] rounded-full opacity-15 blur-3xl animate-bounce-slower" />
-        <div className="absolute top-1/3 right-1/4 w-20 h-20 bg-gradient-to-r from-[#1A2A80] to-[#7A85C1] rounded-full opacity-10 blur-2xl animate-bounce-slow" />
+        <div className="absolute left-4 top-8 h-40 w-40 rounded-full bg-[#5d76cc]/20 blur-3xl" />
+        <div className="absolute bottom-8 right-8 h-48 w-48 rounded-full bg-[#3554b7]/15 blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 py-16 grid md:grid-cols-2 gap-12 items-center">
-        {/* Left Content */}
-        <div className="space-y-6">
-          {/* Animated Main Heading */}
+      <div className="page-shell relative z-10 grid items-center gap-10 md:grid-cols-2 md:gap-12">
+        <div className="space-y-6 md:space-y-7">
           <motion.h1
-            className="text-3xl md:text-5xl font-extrabold leading-tight bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: -30, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
-            style={{ backgroundImage: "linear-gradient(to right, #1A2A80, #3B38A0, #7A85C1)" }}
+            className="section-title text-[2.35rem] leading-[1.05] sm:text-5xl"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, ease: "easeOut" }}
           >
-           Advanced Digital and Reliable Solutions
+            Advanced Digital and Reliable Solutions
             <br />
-            <span className="text-gray-800 text-2xl md:text-3xl font-semibold block mt-2">
-              Enterprise Grade. Client-First.
+            <span className="mt-2 block font-[Sora] text-[1.9rem] font-semibold tracking-tight text-slate-700 sm:text-2xl md:text-[1.8rem]">
+              Enterprise-grade. Client-first.
             </span>
           </motion.h1>
 
-          {/* Animated Description */}
-          <motion.p
-            className="text-gray-700 text-base md:text-lg max-w-lg leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
+          <motion.p className="section-subtitle max-w-xl text-[1.09rem] leading-relaxed md:text-lg" {...fadeUp(0.12, 16)}>
             We deliver secure, scalable applications and cloud solutions across
-            the globe. Partner with us for enterprise web, mobile, ERP, AI, AR/VR, and IoT solutions.
+            the globe. Partner with us for enterprise web, mobile, ERP, AI, AR/VR,
+            and IoT solutions.
           </motion.p>
 
-          {/* Rotating Quotes */}
-          <div className="mt-4 h-12 md:h-14 relative overflow-hidden">
+          <div className="relative h-14 overflow-hidden rounded-lg border border-[#dfe6ff] bg-white/90 px-4 py-3 shadow-sm">
             <AnimatePresence mode="wait">
               <motion.p
                 key={currentQuote}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.6 }}
-                className="text-[#1A2A80] font-medium text-lg md:text-xl absolute"
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.45 }}
+                className="absolute text-sm font-semibold text-[#132f8b] md:text-base"
               >
-                {quotes[currentQuote]}
+                {rotatingQuotes[currentQuote]}
               </motion.p>
             </AnimatePresence>
           </div>
 
-          {/* Buttons */}
-          <div className="flex gap-4 flex-wrap mt-6">
+          <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:gap-4">
             <Link
               to="/services"
-              className="px-6 py-3 bg-gradient-to-r from-[#1A2A80] to-[#3B38A0] text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform"
+              className="focus-ring btn-primary w-full px-6 py-3 text-sm sm:w-auto"
             >
-            View Services
+              View Services
             </Link>
             <Link
-              to="/projects"
-              className="px-6 py-3 border border-[#1A2A80] font-semibold rounded-lg text-[#1A2A80] hover:bg-gradient-to-r hover:from-[#1A2A80] hover:to-[#3B38A0] hover:text-white transition-all"
+              to="/Projects"
+              className="focus-ring btn-secondary w-full px-6 py-3 text-sm sm:w-auto"
             >
               View Projects
             </Link>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 mt-8">
+          <div className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
-                className="flex flex-col items-center text-center p-4 rounded-xl shadow-md bg-white hover:shadow-2xl transition-transform hover:scale-105"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 + i * 0.2, duration: 0.6 }}
+                className="surface-card flex flex-col items-center gap-2 p-3.5 text-center sm:p-4"
+                {...scaleIn(0.2 + i * 0.1)}
+                whileHover={{ y: -3 }}
               >
-                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-r from-[#1A2A80] to-[#3B38A0] text-white mb-2">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-r from-[#132f8b] to-[#3554b7] text-white">
                   {stat.icon}
                 </div>
-                <p className="text-xl font-bold text-[#1A2A80]">{stat.number}</p>
-                <p className="text-gray-600 text-sm">{stat.label}</p>
+                <p className="font-[Sora] text-lg font-bold text-[#132f8b]">{stat.number}</p>
+                <p className="text-xs text-slate-600 md:text-sm">{stat.label}</p>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Right Image */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className="relative"
+          transition={{ delay: 0.25, duration: 0.6 }}
+          className="relative mt-2 md:mt-0"
         >
-          <div className="relative group">
+          <div className="group relative">
             <img
               src={heroImg}
-              alt="hero"
-              className="w-full rounded-3xl shadow-2xl object-cover md:h-[450px] transform group-hover:scale-105 transition duration-500"
+              alt="Team collaborating on enterprise software delivery"
+              className="h-[300px] w-full rounded-3xl border border-[#dfe6ff] object-cover shadow-2xl shadow-[#132f8b]/12 transition duration-500 group-hover:scale-[1.01] sm:h-[340px] md:h-[470px]"
             />
-            {/* Overlay gradient */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-[#1A2A80]/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-[#132f8b]/25 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
           </div>
-          {/* Decorative floating circles */}
-          <div className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-r from-[#3B38A0] to-[#7A85C1] rounded-full opacity-40 blur-2xl animate-bounce" />
-          <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-r from-[#7A85C1] to-[#B2B0E8] rounded-full opacity-30 blur-3xl animate-bounce-slow" />
+
+          <div className="absolute -right-4 -top-5 h-20 w-20 rounded-full bg-[#3554b7]/30 blur-2xl" />
+          <div className="absolute -bottom-4 -left-5 h-24 w-24 rounded-full bg-[#9ba8e6]/35 blur-2xl" />
         </motion.div>
       </div>
     </section>

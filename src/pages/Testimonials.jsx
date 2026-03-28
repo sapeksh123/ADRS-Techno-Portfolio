@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { fadeUp } from "../utils/motion";
 
 const testimonialsData = [
   {
@@ -56,7 +57,6 @@ const testimonialsData = [
     review: "ADRS Techno delivered a robust platform for our clients in Spain and Europe.",
     clientType: "Spain",
   },
-  // Korea International Projects
   {
     name: "Kim Joon",
     project: "Classcrew",
@@ -78,7 +78,7 @@ const testimonialsData = [
   {
     name: "KIA Motors",
     project: "KIA GCOF 2025",
-    review: "Seamless digital solutions for our automotive projects. Excellent communication and support.",
+    review: "Seamless digital solutions for our automotive Projects. Excellent communication and support.",
     clientType: "Korea",
   },
 ];
@@ -86,64 +86,61 @@ const testimonialsData = [
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
 
-  // Rotate testimonials every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonialsData.length);
-    }, 3000);
+    }, 4200);
     return () => clearInterval(interval);
   }, []);
 
-  const fadeUp = (delay = 0) => ({
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { delay, duration: 0.6 },
-  });
-
   return (
-    <section className="bg-white py-16 px-4 md:px-12 mt-7 ">
-      {/* Heading */}
-      <motion.div {...fadeUp()} className="text-center max-w-3xl mx-auto mb-12">
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-[#1A2A80]">
+    <section className="page-shell">
+      <motion.div {...fadeUp()} className="mx-auto mb-12 max-w-3xl text-center">
+        <h2 className="section-title text-4xl md:text-5xl mb-4">
           Our Customers & Global Clients
         </h2>
-        <p className="text-gray-700 text-base md:text-lg">
-          ADRS Techno delivers innovative solutions globally. From web and mobile apps to AI/ML, AR/VR, IoT, cloud deployment, and full project maintenance.
+        <p className="section-subtitle text-base md:text-lg">
+          ADRS Techno delivers innovative solutions globally, from web and mobile apps to AI/ML, AR/VR, IoT, cloud deployment, and full project maintenance.
         </p>
       </motion.div>
 
-      <div className="relative h-72 md:h-80 max-w-3xl mx-auto">
-        <AnimatePresence>
-          <motion.div
-            key={current}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.8 }}
-            className="absolute inset-0 flex flex-col justify-center items-center bg-[#1A2A80] rounded-2xl p-8 shadow-lg"
-          >
-            <p className="text-white text-lg md:text-xl italic mb-4 text-center">
-              “{testimonialsData[current].review}”
-            </p>
-            <h4 className="text-white font-bold text-lg">{testimonialsData[current].name}</h4>
-            <p className="text-white/80 text-sm">
-              {testimonialsData[current].project} • {testimonialsData[current].clientType}
-            </p>
-          </motion.div>
-        </AnimatePresence>
-      </div>
+      <div className="relative mx-auto max-w-3xl" role="region" aria-label="Testimonials carousel">
+        <div className="surface-card relative min-h-[300px] rounded-2xl p-8 md:min-h-[320px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -14 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+              className="absolute inset-0 flex flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-[#132f8b] to-[#3554b7] p-8 text-center"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <p className="mb-5 text-lg italic text-white md:text-xl">
+                “{testimonialsData[current].review}”
+              </p>
+              <h4 className="font-[Sora] text-lg font-semibold text-white">{testimonialsData[current].name}</h4>
+              <p className="mt-1 text-sm text-white/85">
+                {testimonialsData[current].project} • {testimonialsData[current].clientType}
+              </p>
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
-      {/* Dots Navigation */}
-      <div className="flex justify-center gap-3 mt-6">
-        {testimonialsData.map((_, idx) => (
-          <button
-            key={idx}
-            className={`w-3 h-3 rounded-full transition-all ${
-              current === idx ? "bg-[#1A2A80] scale-125" : "bg-gray-300"
-            }`}
-            onClick={() => setCurrent(idx)}
-          ></button>
-        ))}
+        <div className="mt-6 flex justify-center gap-3" aria-label="Select testimonial">
+          {testimonialsData.map((_, idx) => (
+            <button
+              key={idx}
+              className={`focus-ring h-3 w-3 rounded-full transition-all ${
+                current === idx ? "scale-125 bg-[#132f8b]" : "bg-slate-300 hover:bg-slate-400"
+              }`}
+              onClick={() => setCurrent(idx)}
+              aria-label={`Show testimonial ${idx + 1}`}
+              aria-current={current === idx ? "true" : "false"}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
